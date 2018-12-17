@@ -4,7 +4,7 @@ import firebase from "firebase";
 import base, { firebaseApp } from "../base"
 import AddFishForm from "./AddFishForm";
 import EditFishForm from "./EditFishForm";
-import Login from "./Login";
+//import Login from "./Login";
 
 class Inventory extends React.Component {
   static propTypes = {
@@ -56,10 +56,13 @@ class Inventory extends React.Component {
   }
 
   render() {
-    const logout = <button onClick= {this.logout}>Logout</button>
+    //const logout = <button onClick= {this.logout}>Logout</button>
     //check if user logged in
-    if(!this.state.uid) {
-      return <Login authenticate = {this.authenitcate} />;
+    /* if(!this.state.uid) {
+      return (
+        
+        <Login authenticate = {this.authenitcate} />
+      );
     }
     //check if they are owner of store
     if(this.state.uid !== this.state.owner){
@@ -69,11 +72,11 @@ class Inventory extends React.Component {
           {logout}
         </div>
       );
-    }
+    } */
     //render the inventory for owners
     return (
       <div className="inventory">
-        {logout}
+        {/*logout*/}
         <h2>Inventory</h2>
         {Object.keys(this.props.fishes).map(key => <EditFishForm key={key} index={key} 
         fish = {this.props.fishes[key]} updateFish={this.props.updateFish}
